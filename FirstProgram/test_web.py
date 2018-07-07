@@ -5,26 +5,35 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import pandas as pd
 import time
-from nose import with_setup
 import logging
+from nose.tools import eq_
+from nose.tools import ok_
 
-
-def setUp():
+def setup():
     global driver
-    driver = webdriver.Chrome()
+    opt = webdriver.ChromeOptions()
+    opt.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
+    opt.add_argument('--hide-scrollbars')  # 隐藏滚动条, 应对一些特殊页面
+    opt.add_argument("window-size=1920x1080")
+    opt.add_argument('blink-settings=imagesEnabled=false')  # 不加载图片, 提升速度
+    opt.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
+    driver = webdriver.Chrome(options=opt)
+    # driver = webdriver.Chrome()
     driver.implicitly_wait(15)
     driver.get("http://www.baidu.com")
     print(driver.title)
 
-def tearDown():
+
+def teardown():
     driver.close()
+
 
 def test_dataframe():
     elem1 = driver.find_element_by_id("kw")
     elem2 = driver.find_element_by_id("su")
     elem3 = None
-    df = pd.DataFrame(data=[elem1, elem2, elem3], index=[1, 2, 3])
-    print(df)
+    df = pd.DataFrame(data=[[elem1, elem2, elem3], [elem1, elem2, elem3]], index=[1, 2])
+    # logging.error("This is an error msg")
 
 
 def test_searching():
@@ -42,10 +51,11 @@ def test_changesetting():
 
     driver.find_element_by_id('nr').click()
     driver.find_element_by_css_selector('#nr > option:nth-child(2)').click()
+    driver.find_element_by_css_selector('#sugConf>th').click()
 
 
 if __name__ == '__main__':
-    setUp()
+    setup()
     test_searching()
     test_changesetting()
-    tearDown()
+    teardown()
