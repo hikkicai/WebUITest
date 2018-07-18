@@ -1,8 +1,39 @@
 Transformation Road from a Manual Tester to an Automation Developer
-Background:
-Was a manual tester and doing the repetitive work everyday. boring and inefficient
-a) reconciliation -- file comparison
-b) UI testing
+Background: Time to make a change
+I joined HSBC XARA programme as a manual tester in 2015. Each day, my life was largely filled with the following 2 items:
+a) Reconciliation  (comparing different csv files again and again)
+b) UI testing (left click, right click, double click on a windows application)
+
+Doing the repetitive work everyday is boring and inefficient. Even we already had an automation platform called TAP to support UI testing, we were still lack of programming skills to debug cases by ourselves. We relied on the XFOS automation team (who developed the tool)so much for trouble shooting. One day, bad news came. The last developer, who worked on XARA automation before, decided to leave HSBC. And no one would be able to support us from XFOS team due to resource constraints. Then we realized its time to make a change!
+
+Chapter 1:  Bug fixing
+I didn't expect that, the first challenge I had to face, is bug fixing.
+There are a few bugs increasing our manual effort,  need to fix as soon as possible.
+comparator: stop comparing when duplicate keys found,  wrong mismatch numbers in the summary
+tap: UI changed but code out of date, some steps were not well designed and breaking when specific data input
+
+pushed us to read through and unstand the code as fast as I could so that to  find out the root cause and fix the bugs.
+squeezed time to read java and C# codes,  asked questions to our java developers
+
+Chapter 2:  Get to know Python
+Even I succussfully fixed some bugs in comparators and taps. It doesn't mean that I became an expert of Java and C#. I was just familiar with our test codes and made some small enhancement based on the existing code struture. Still a long way to go if I want to use my limited knowledge to somewhere else. Unable to learn both Java and C# in a short time. A friend of mine gave me an advice: Python.
+simple elegant language for beginners. have a lot of 3rd party libs to use, blah blah blah
+
+watch online courses, read python codes written by someone else
+
+Chapter 3: Various Python Libs -- I love pandas
+Start with simple scripts
+read/write docs, do simple calculations
+Write simple scripts to learn to use libs
+
+Chapter 4: Apply your script to the projects
+apply the script in project:  read/compare csv,  find and unzip docs,  generate pivot table dashboard. download artifacts and compare
+
+The more I learn today, the more I hate the codes written yesterday
+
+Chapter 5: Selenium & Robot Framework
+web ui test with selenium,  build my own common modules
+
 
 Seeking for change:
 improve efficiency of recon process
@@ -10,9 +41,8 @@ code enhancement based on new feature in UI
 automation setup for new UI
 
 how:
-start with learning python,  it is a simple elegant language for beginners. have a lot of 3rd party libs to use
+start with learning python,  it is a 
 watch online courses from diff websites, one is bilibili
-read python codes written by someone else
-start with simple script: read/write docs, do simple calculations
-apply the script in project:  read/compare csv,  find and unzip docs,  generate pivot table dashboard. download artifacts and compare
-advanced:  web ui test with selenium,  build my own common modules
+
+start with simple script: 
+advanced:  
