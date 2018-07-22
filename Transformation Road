@@ -1,27 +1,28 @@
 Transformation Road from a Manual Tester to an Automation Developer
-Background: Time to make a change
+Background: 
 I joined HSBC XARA programme as a manual tester in 2015. Each day, my life was largely filled with the following 2 items:
 a) Reconciliation  (compare compare compare)
 b) UI testing (left click, right click, double click)
 
-Doing the repetitive work everyday is boring and inefficient. Even we already had an automation platform called TAP to support UI testing, we were still lack of programming skills to debug cases by ourselves. We relied on the XFOS automation team (who developed the tool)so much when issues occur. One day, bad news came. The last developer, who worked on XARA automation before, decided to leave HSBC. Then no one would be able to support us from XFOS team due to resource constraints. At that time we realized its time to make a change!
+On the reconciliation, we used a comparator written in Java. In terms of UI test automation, it was written in C#, integrated in TAP.
 
 Chapter 1:  Bug fixing
-I didn't expect that, the first challenge I had to face, is bug fixing.
-There are a few bugs consistently increasing our manual effort. We wanted to get them fixed for quite a long time. Here is one example:
-comparator(Java): 
-Expected: comparator use key columns to identify unique record in two files and compare. If duplicate rrecords found, write the duplicate records into a separate sheet of result files and continues to compare the rest of rows.
+The first challenge I faced in the transformation journey, was bug fixing. There were a few bugs consistently increasing our manual effort in both comparator and TAP. We had to get them resolved as early as possible. Here is one example:
+comparator issue: 
+Expected: comparator use key columns to identify each row in two files then compare. If duplicate rrecords found, write the duplicate records into a separate sheet of result files and continues to compare the rest of the rows.
 Actual: Comparator stops comparing once duplicate keys found
 
-The example above was just a small piece of the bugs. There were more issues found on TAP side. Those were wrtten in C# for Trader Desktop cases. Some were not well designed and kept breaking if specific data input. Some were even unusable as UI changed.
-All the problems facing at that time didn't give us enough time to breath and picked up the programming skills slowly. I had to read through the code and understand it as fast as I could, so that I could locate the root cause and fix the annoying bugs. 
+The example above was just a small piece of all. There were more issues found on TAP side which were wrtten in C# for Trader Desktop cases. Some were not well designed and kept breaking cases if specific data input. Some were even unusable as UI changed.
+With all these issues facing, I had to read through the Java and C# codes and understand them as fast as I could, so that I could locate the root cause and fix the annoying bugs. After getting all the issues resolved, I managed to improved not only the test efficiency but also the ability of reading code.
+
 ~~~~~~~~here attached the commit of the issue fix~~~~~~~~~~~~~
 
 Chapter 2:  Get to know Python
-Even though I was able to fix some bugs and did enhancement in comparators and TAP. It doesn't mean that I already became an expert of Java and C#. I was just familiar with our test codes and made some small changes based on the existing code struture. There is still a long way to go on this transformation journey. 
-Unable to learn both Java and C# in a short time. A friend of mine gave me an advice: Python.
+Even though I was able to fix some defects and did enhancement in the comparators and TAP. It doesn't mean that I already became an expert of Java and C#. I was just familiar with our test codes and made some small changes based on the existing code struture. There is still a long way to go on this transformation journey. 
+As mentioned previously, comparator and TAP XARA version were written in Java and C# respectively. It was not easy for me to learn both Java and C# at the same time, and would be quite a long time before being able to setup my own Java/C# project.
+So is there a language easy to use and more productive at the same time? The answer probaly goes to: Python!
 Python is a really powerful high-level programming language. It has simple easy-to-use syntax and various 3rd party libraries, allowing people to write programs having greater functionality with fewer lines of code. It was just the perfect language for people like me who had little experience in programming. 
-So I started to watch the online courses of python, read python codes written by someone else
+So I started to watch the online courses of python, setup python environments to all my PCs and read 
 
 Chapter 3: Various Python Libs -- I love pandas
 Start with simple scripts
