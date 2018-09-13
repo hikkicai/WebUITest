@@ -1,0 +1,8 @@
+FirstProgram/*.html
+FirstProgram/*.log
+FirstProgram/*.png
+FirstProgram/output.xml
+FirstProgram/__pycache__/*
+JSLearning/node_modules/
+FirstProgram/input/
+FirstProgram/.idea/
